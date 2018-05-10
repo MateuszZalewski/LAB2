@@ -44,6 +44,16 @@ void Restaurant::showOrders(std::vector<OrderInterface *> &v) {
     }
 }
 
+void Restaurant::showIncomplete()
+{
+    showOrders(incompletedOrders);
+}
+
+void Restaurant::showComplete()
+{
+    showOrders(completedOrders);
+}
+
 void Restaurant::showOrders() {
     std::cout<<"Incompleted orders: "<<std::endl;
     showOrders(incompletedOrders);
@@ -53,7 +63,7 @@ void Restaurant::showOrders() {
 
 std::vector<OrderInterface *>::iterator Restaurant::findOrderIterById(int id,std::vector<OrderInterface *> &v) {
     for(auto it = v.begin(); it != v.end() ; ++it) {
-        if(id==(*it)->id) {
+        if(id==(*it)->getId()) {
             return it;
         }
     }

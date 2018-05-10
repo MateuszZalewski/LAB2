@@ -14,10 +14,12 @@
 #include "Order.hpp"
 
 class Restaurant{
-    public:
+    private:
         int id;
+        void showOrders(std::vector<OrderInterface *>&);
         std::vector<OrderInterface *> completedOrders;
         std::vector<OrderInterface *> incompletedOrders;
+    public:
         template<typename T> void addOrder(std::string name, T price) {
             id++;
             Order<T>* new_order=new Order<T>(id,name,price);
@@ -25,7 +27,8 @@ class Restaurant{
         }
         void removeOrder(int);
         void completeOrder(int);
-        void showOrders(std::vector<OrderInterface *>&);
+        void showIncomplete();
+        void showComplete();
         void showOrders();
         std::vector<OrderInterface *>::iterator findOrderIterById(int,std::vector<OrderInterface *>&);
         Restaurant();

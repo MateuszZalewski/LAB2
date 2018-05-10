@@ -11,9 +11,14 @@
 #include<iostream>
 
 class OrderInterface {
-    public:
+    protected:
         int id;
         std::string name;
+    public:
+        int getId();
+        void setId(int);
+        std::string getName();
+        void setName(std::string);
         OrderInterface(int ii,std::string ss):id(ii),name(ss){}
         virtual ~OrderInterface(){};
         virtual void show(std::ostream& stream) const{}

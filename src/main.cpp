@@ -8,5 +8,4 @@ int main()
     RestaurantUI interface(restaurant);
     interface.run();
     return 0;
-
 }

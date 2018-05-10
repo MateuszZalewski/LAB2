@@ -54,11 +54,11 @@ void RestaurantUI::showOrders() {
 }
 
 void RestaurantUI::showComplete() {
-    restaurant.showOrders(restaurant.completedOrders);
+    restaurant.showComplete();
 }
 
 void RestaurantUI::showIncomplete() {
-    restaurant.showOrders(restaurant.incompletedOrders);
+    restaurant.showIncomplete();
 }
 
 void RestaurantUI::addOrder() {
